@@ -1,4 +1,6 @@
 GET http://localhost:3000/
+
+
 ###
 POST http://localhost:3000/cadastros HTTP/1.1
 Content-Type: application/json
@@ -17,3 +19,7 @@ Content-Type: application/json
     "email":"emai@email.com1",
     "password":"password"
 }
+
+###
+GET http://localhost:3000/listar-usuarios HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YzY4Y2NmMTQwOWEyMjUyODI0ZTNkNSIsImlhdCI6MTcyNDQ1MzgyNywiZXhwIjoxNzI0NDUzODg3fQ.tWnPw2Nfj8bkdvy-D78eQA-9c_ko1hB5woMdf3rVZOU

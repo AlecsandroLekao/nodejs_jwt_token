@@ -31,7 +31,7 @@ app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   const user = await prisma.user.findUnique({
-    where: { email },
+    where: { email:email },
   });
 
   if (!user) {
@@ -44,6 +44,8 @@ app.post('/login', async (req, res) => {
     return res.status(403).json({ message: 'senha invalida' });
   }
 
+  console.log('TOKEN '+ JWT_SECRET)
+  
   const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '1m' });
 
   return res.status(200).json(token);
